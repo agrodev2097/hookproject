@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import Routes from './node_modules/pages/routes'
+import TopBar from './node_modules/components/topBar'
+import {CurrentUserProvider} from './node_modules/contexts/currentUser'
 
 const App = () => { 
     return (
-        <div>
-            <h3>Welcome to hooks</h3>
+        <CurrentUserProvider>
             <Router>
+                <TopBar/>
                 <Routes/>
             </Router>
-        </div>
+        </CurrentUserProvider>
     )
 }
 
